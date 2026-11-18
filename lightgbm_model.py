@@ -90,10 +90,13 @@ def main():
     print("Training LightGBM model...")
 
     model.fit(
-        X_train,
-        y_train
+    X_train,
+    y_train
     )
 
+    model.booster_.save_model("lightgbm_model.txt")
+
+    print("Model saved as lightgbm_model.txt")
     print("Training complete.")
 
     # -----------------------------
